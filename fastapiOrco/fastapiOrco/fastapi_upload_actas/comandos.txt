@@ -1,0 +1,4 @@
+cd Downloads\fastapi_upload_actas
+pip install -r requirements.txt
+pip install python-multipart
+uvicorn main:app --reload

@@ -1,0 +1,134 @@
+.mapa-container {
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.mapa-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #0a192f;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.mapa-imagen {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  max-height: 70vh;
+}
+
+.punto-departamento {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  z-index: 2;
+}
+
+.punto-departamento:hover {
+  transform: translate(-50%, -50%) scale(1.3);
+  background-color: #64ffda;
+  box-shadow: 0 0 10px rgba(100, 255, 218, 0.8);
+}
+
+.punto-departamento.active {
+  background-color: #64ffda;
+  box-shadow: 0 0 12px rgba(100, 255, 218, 0.8);
+}
+
+.punto-label {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(10, 25, 47, 0.9);
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.punto-departamento:hover .punto-label {
+  opacity: 1;
+}
+
+.card-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.card-wrapper {
+  position: relative;
+  background-color: #0a192f;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #64ffda;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+  z-index: 1;
+}
+
+.close-button:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .mapa-container {
+    padding: 1rem;
+  }
+  
+  .mapa-wrapper {
+    padding: 1rem;
+    max-width: 400px;
+  }
+  
+  .punto-departamento {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .punto-label {
+    font-size: 0.65rem;
+    padding: 1px 6px;
+  }
+} 
